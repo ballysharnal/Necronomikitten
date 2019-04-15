@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    WELCOME TO {{ title }} !
+  </h1>
+  <a [routerLink]="['/createKitten']"
+    *ngIf="booleanRoute"
+    (click)="invertBooleanRoute()"
+    class="button"
+  >
+    Click here to add more kittens in your house.
+  </a>
+  <a [routerLink]="['/']"
+    *ngIf="!booleanRoute"
+    (click)="invertBooleanRoute()"
+    class="button"
+  >
+    Click here to return to your house.
+  </a>
+<br>
+<router-outlet></router-outlet>
+<app-list-kitten></app-list-kitten>
+<img [src]="urlLogo" class="imgLogo">
+
+

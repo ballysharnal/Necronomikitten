@@ -1,0 +1,102 @@
+<div class="content">
+  <h1>NECRONOMIKITTEN</h1>
+  <h2>« PH'NGLUI MGLW'NAFH CTHULHU R'LYEH WGAH'NAGL FHTAGN »</h2>
+  <br>
+  <img 
+    [src]='imgSr' 
+    *ngIf="!bool"
+  >
+  <img 
+    [src]='imgSrc' 
+    *ngIf="bool"
+  >
+  <br>
+  <form class="field control" [formGroup]="formular">
+      <a 
+          href
+          class="button" 
+          type="submit" 
+          (click)="changeUrl($event)"
+      >
+        See the url image
+      </a>
+      <label class="label">
+        <p>
+          Enter the url of your thing:
+        </p>
+        <input 
+            class="input is-primary" 
+            type="text" 
+            formControlName="url" 
+            placeholder="url of your monster"
+        >
+      </label>
+      <label class="label">
+        <p>
+          Name:
+        </p>
+        <input 
+            class="input is-primary" 
+            type="text" 
+            formControlName="name" 
+            placeholder="the name of your monster"
+        >
+        <p *ngIf="-formular.value.name.length > -4">
+          Please enter at least three characters.
+        </p>
+      </label>
+      <br>
+      <label class="label">
+        <p>
+          Race:
+        </p>
+        <input 
+            class="input is-primary" 
+            type="text" 
+            formControlName="race" 
+            placeholder="the race if it has enough shape to be well-described"
+        >
+        <p *ngIf="-formular.value.race.length > -4">
+          Please enter at least three characters.
+        </p>
+      </label>
+      <br>
+      <label class="label">
+        <p>
+          Birth:
+        </p>
+        <input 
+            class="input is-primary" 
+            type="text" 
+            formControlName="birth" 
+            placeholder="the day of your failure"
+        >
+        <p *ngIf="-formular.value.birth.length > -4">
+          Please enter at least three characters.
+        </p>
+      </label>
+      <br>
+      <div *ngIf="boolButtonColor != false">
+
+        <a 
+        href
+        class="button is-primary" 
+        type="submit" 
+        (click)="onSubmit($event)"
+        >
+          Create Abomi-- I-I mean kitten!
+        </a>
+    </div>
+    <div *ngIf="boolButtonColor == false">
+
+        <a 
+        href
+        class="button is-danger" 
+        type="submit" 
+        (click)="onSubmit($event)"
+        >
+          Create Abomi-- I-I mean kitten!
+        </a>
+    </div>
+    </form>
+</div>

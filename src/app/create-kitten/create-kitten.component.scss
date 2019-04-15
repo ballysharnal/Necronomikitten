@@ -1,0 +1,57 @@
+.content {
+
+    display: inline-block;
+    width: 700px;
+    background: none;
+    margin-right: 10%;
+
+}
+
+h1, h2 {
+
+        color: #eee;
+}
+
+img {
+    border-radius: 1%;
+}
+
+input[type="text"] {
+
+    background: rgba(210, 210, 210, .3);
+    color: white;
+
+}
+
+input::placeholder{
+    color: white;
+}
+
+li {
+
+    display: inline-block;
+    margin-left: calc(50% - 100px);
+
+}
+
+span {
+
+    display: block;
+
+}
+
+p {
+
+    color: red;
+
+}
+
+
+
+.ng-valid {
+    border-left: 5px solid #42A948; /* green */
+  }
+
+.ng-invalid {
+border-left: 5px solid #a94442; /* red */
+}

@@ -1,0 +1,59 @@
+<div class="square box">
+  <h2>LIST OF YOUR CREATIONS</h2>
+  <ul *ngFor="let conv of conservationVal; let i = index">
+      <li *ngIf="conservationVal[i][5] == false">
+        <div
+          class="box is-danger"
+          (mouseover)="doMouseOver(i)" 
+          (mouseout)="doMouseOut(i)"
+          [style.background]="'url(' + conservationVal[i][3] + ')'"
+        >
+        <div *ngIf="conservationVal[i][4] == true" [ngClass]="'transitionClass'">
+          <p>Name : {{ conservationVal[i][0] }}<br>
+          Race : {{ conservationVal[i][1] }}<br>
+          Birth : {{ conservationVal[i][2] }}</p>
+        </div>
+      </div>
+      <button
+        class="button is-primary" 
+        (click)="adoptKitten(i)"
+      >
+        Adopt this Kitten
+      </button>
+    </li>
+  </ul>
+
+  <h3>BE CAREFUL, IF YOU ABANDON YOUR MONSTERS INSIDE THE CAULDRON THEY WILL NEVER RETURN!!!</h3>
+</div>
+
+<div class="square box">
+  <h2>UNLEASHED KITTENS</h2>
+  <ul *ngFor="let conv of conservationVal; let i = index">
+    <li 
+        *ngIf="conservationVal[i][5] != false"
+    >
+      <div
+          class="box is-danger"
+          (mouseover)="doMouseOver(i)" 
+          (mouseout)="doMouseOut(i)"
+          [style.background]="'url(' + conservationVal[i][3] + ')'"
+      >
+        <div 
+            class="hoverPrinted" 
+            *ngIf="conservationVal[i][4] == true"
+        >
+          <p>Name : {{ conservationVal[i][0] }}<br>
+          Race : {{ conservationVal[i][1] }}<br>
+          Birth : {{ conservationVal[i][2] }}</p>
+        </div>
+    </div>
+    <button
+      class="button is-danger" 
+      (click)="removeKitten(i)"
+    >
+      Release this Kitten
+    </button>
+  </li>
+  </ul>
+  <h3>MAKE THEM BIG, HIDEOUS, ENORMOUS, PUTREFIED TO OBTAIN YOUR MAXIMUM CULTIST POWER!!!</h3>
+</div>
